@@ -1,6 +1,7 @@
 import { Link, Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 import Login from "./pages/Login";
 import Feed from "./pages/Feed";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Feed />
         </Route>
       </Switch>
+      <ToastContainer />
     </>
   );
 }
