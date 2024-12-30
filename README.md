@@ -1,8 +1,5 @@
-# React + Vite
+# TASARIM
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Edit link: [https://www.tldraw.com/r/3qm-WU1ftiXI46znflRC7?d=v-241.-10619.1354.846.page](https://www.tldraw.com/r/3qm-WU1ftiXI46znflRC7?d=v-241.-10619.1354.846.page)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Viewer link: [https://www.tldraw.com/ro/4qqKxj8IRsEv7RMRqvtxg?d=v-241.-10619.1354.846.page](https://www.tldraw.com/ro/4qqKxj8IRsEv7RMRqvtxg?d=v-241.-10619.1354.846.page)
