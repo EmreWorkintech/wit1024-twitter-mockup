@@ -3,7 +3,7 @@ import NavMenuItem from "./NavMenuItem";
 
 function NavMenu() {
   return (
-    <div>
+    <div className="flex-grow">
       <i className="fa-brands fa-twitter text-blue-400 fa-2xl mb-6"></i>
       <div>
         {menuItems.map((item, index) => (
