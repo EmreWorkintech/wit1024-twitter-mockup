@@ -1,7 +1,7 @@
-import axios from "axios";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { toast } from "react-toastify";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { UserContext } from "../contexts/UserContext";
 
 function LoginForm() {
   const {
@@ -16,30 +16,18 @@ function LoginForm() {
     mode: "onChange",
   });
 
-  const history = useHistory();
+  const { logInUser } = useContext(UserContext);
 
   function checkPassword(str) {
     var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     return re.test(str) || "Strong password giriniz.";
   }
 
-  function submitFn(data) {
-    axios
-      .post("https://reqres.in/api/users", data)
-      .then((response) => {
-        toast.success("Login başarılı. id:" + response.data.id);
-        history.push("/feed");
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      });
-  }
-
   return (
     <div className="w-1/5 flex gap-4 flex-col">
       <i className="fa-brands fa-twitter text-blue-400 fa-2xl mb-6"></i>
       <h1 className="text-xl font-bold">Log in to Twitter</h1>
-      <form onSubmit={handleSubmit(submitFn)}>
+      <form onSubmit={handleSubmit(logInUser)}>
         <input
           className="p-2 border-2 border-slate-200 block my-4 w-full"
           placeholder="phone, name or email"

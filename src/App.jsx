@@ -2,6 +2,7 @@ import { Link, Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 import Login from "./pages/Login";
 import Feed from "./pages/Feed";
 import { ToastContainer } from "react-toastify";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -22,9 +23,9 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
-        <Route exact path="/feed">
+        <PrivateRoute exact path="/feed">
           <Feed />
-        </Route>
+        </PrivateRoute>
       </Switch>
       <ToastContainer />
     </>
