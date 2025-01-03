@@ -67,6 +67,7 @@ function LoginForm() {
         <button
           disabled={!isValid}
           className="rounded-full text-white bg-blue-400 p-4 text-center w-full"
+          data-testid="loginform-submit"
         >
           Log In
         </button>

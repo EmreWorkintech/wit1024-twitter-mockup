@@ -2,7 +2,8 @@ import axios from "axios";
 
 function createAxiosInstance() {
   const userStr = localStorage.getItem("user");
-  const token = userStr != "null" ? JSON.parse(userStr).authToken : null;
+  const token =
+    userStr && userStr != "null" ? JSON.parse(userStr).authToken : null;
   return axios.create({
     baseURL: "https://reqres.in/api",
     headers: token
