@@ -6,7 +6,7 @@ function createAxiosInstance(env) {
     userStr && userStr != "null" ? JSON.parse(userStr).authToken : null;
   return axios.create({
     baseURL:
-      env === "prod" ? import.meta.env.API_PROD : "https://reqres.in/api",
+      env === "prod" ? import.meta.env.VITE_API_PROD : "https://reqres.in/api",
     headers: token
       ? {
           Authorization: token,
