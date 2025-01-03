@@ -1,10 +1,14 @@
 import axios from "axios";
 
-function createAxiosInstance() {
+function createAxiosInstance(env) {
   const userStr = localStorage.getItem("user");
-  const token = userStr != "null" ? JSON.parse(userStr).authToken : null;
+  const token =
+    userStr && userStr != "null" ? JSON.parse(userStr).authToken : null;
   return axios.create({
-    baseURL: "https://reqres.in/api",
+    baseURL:
+      env === "prod"
+        ? "https://669617c50312447373c1057a.mockapi.io/api/v1"
+        : "https://reqres.in/api",
     headers: token
       ? {
           Authorization: token,
@@ -14,6 +18,7 @@ function createAxiosInstance() {
 }
 
 export const API = createAxiosInstance();
+export const API_PROD = createAxiosInstance("prod");
 
 export function getPosts() {
   return axios

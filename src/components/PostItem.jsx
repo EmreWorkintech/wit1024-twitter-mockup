@@ -8,7 +8,10 @@ function PostItem({ item }) {
     locale: tr,
   });
   return (
-    <div className="flex items-start gap-4 border-t-2 border-slate-300 p-6">
+    <div
+      className="flex items-start gap-4 border-t-2 border-slate-300 p-6"
+      data-testid="postItem"
+    >
       <img
         className="rounded-full w-16"
         src={`https://picsum.photos/200?${item.id}`}
