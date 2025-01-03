@@ -1,12 +1,14 @@
+import { useSelector } from "react-redux";
 import PostItem from "./PostItem";
-import { usePosts } from "../services/queries";
 
 function Posts() {
-  const { data: posts, error, isError, isPending } = usePosts();
+  const posts = useSelector((store) => store.posts);
+  const loading = useSelector((store) => store.loading);
+  const error = useSelector((store) => store.error);
 
-  if (isPending) return <span className="loader"></span>;
+  if (loading) return <span className="loader"></span>;
 
-  if (isError) return <p>{error.message}</p>;
+  if (error) return <p>{error.message}</p>;
 
   return (
     <div>
